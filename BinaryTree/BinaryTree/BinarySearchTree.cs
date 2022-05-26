@@ -17,6 +17,8 @@ namespace BinaryTree
             this.Left = null;
             this.Right = null;
         }
+        int LeftCount = 0;
+        int RightCount = 0;
         public void AddNode(K item)
         {
             K CurrentNode = NodeData;   //56
@@ -30,7 +32,7 @@ namespace BinaryTree
                 {
                     Left.AddNode(item);
                 }
-                
+                LeftCount++;
             }
             else
             {
@@ -42,8 +44,12 @@ namespace BinaryTree
                 {
                     Right.AddNode(item);
                 }
-               
+                RightCount++;
             }
+        }
+        public void Getsize()
+        {
+            Console.WriteLine("Size of the Binary Tree :" + (LeftCount + RightCount + 1));
         }
         public void Display()
         {
